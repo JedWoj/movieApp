@@ -13,7 +13,7 @@ const CarouselBtnLeft = ({setActivePage}: CarouselBtnLeftProps) => {
         top={0} 
         left={0} 
         bottom={0} 
-        width={50} 
+        width={{base: 6}} 
         backgroundColor={'rgba(0,0,0,0.25)'}
         onClick={() => setActivePage('-')}
     >

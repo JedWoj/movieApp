@@ -7,7 +7,7 @@ interface CarouselItemProps {
 
 const CarouselItem = ({name}: CarouselItemProps) => {
     return(
-        <Center width={260} height={200} flexShrink={'0'} backgroundColor={'red.400'}>
+        <Center width={{base: 20}} height={{base: 20}} flexShrink={{base: 1}} backgroundColor={'red.400'}>
             {name}
         </Center>
     )

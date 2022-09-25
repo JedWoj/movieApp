@@ -17,8 +17,6 @@ const CarouselSlider = ({movies}: CarouselSliderProps) => {
 
   const renderCarouselItems = () => {
     const items = [...movies].splice(activePage * 5,activePage * 5 + 5);
-    console.log(items)
-    console.log(movies);
     return items.map((itm) => <CarouselItem key={itm} name={itm} />)
   }
 
@@ -27,10 +25,10 @@ const CarouselSlider = ({movies}: CarouselSliderProps) => {
       overflowX={'hidden'} 
       marginX={'auto'} 
       marginTop={12} 
-      gap={9} 
+      gap={{base: 3}} 
       position={'relative'} 
       backgroundColor={'rgba(0,0,0,0.05)'}
-      maxWidth={'8xl'}
+      width={{base: '80', sm: 'container.sm', md: 'container.md', lg: 'container.lg', xl: '8xl'}}
     >
       {activePage > 0 && <CarouselBtnLeft setActivePage={handleCarouselMovement} />}
         {renderCarouselItems()}
