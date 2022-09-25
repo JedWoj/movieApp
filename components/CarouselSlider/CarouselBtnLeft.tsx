@@ -1,21 +1,24 @@
 import React from 'react';
-import { Flex } from '@chakra-ui/react';
+import { Center } from '@chakra-ui/react';
 
-const CarouselBtnLeft = () => {
+interface CarouselBtnLeftProps {
+    setActivePage: Function,
+}
+
+const CarouselBtnLeft = ({setActivePage}: CarouselBtnLeftProps) => {
     return(
-    <Flex 
+    <Center 
         position={'absolute'} 
         cursor={'pointer'} 
-        justifyContent={'center'} 
-        alignItems={'center'} 
         top={0} 
         left={0} 
         bottom={0} 
         width={50} 
         backgroundColor={'rgba(0,0,0,0.25)'}
+        onClick={() => setActivePage('-')}
     >
         -
-    </Flex>)
+    </Center>)
 }
 
 export default CarouselBtnLeft;

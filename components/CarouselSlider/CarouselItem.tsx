@@ -1,11 +1,15 @@
 import React from 'react';
-import {Box} from '@chakra-ui/react';
+import { Center } from '@chakra-ui/react';
 
-const CarouselItem = () => {
+interface CarouselItemProps {
+    name: number;
+}
+
+const CarouselItem = ({name}: CarouselItemProps) => {
     return(
-        <Box width={260} height={200} flexShrink={'0'} backgroundColor={'red.400'}>
-            
-        </Box>
+        <Center width={260} height={200} flexShrink={'0'} backgroundColor={'red.400'}>
+            {name}
+        </Center>
     )
 }
 
