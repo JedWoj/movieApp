@@ -1,4 +1,6 @@
 import type { AppProps } from 'next/app';
+import Nav from '../components/Nav/Nav';
+import BackgroundColor from '../components/Nav/UI/GlobalStyles';
 import { ChakraProvider } from '@chakra-ui/react'; 
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
@@ -11,7 +13,10 @@ function MyApp({ Component, pageProps }: AppProps) {
   return(
     <ChakraProvider>
       <ApolloProvider client={client}>
-      <Component {...pageProps} />
+        <BackgroundColor>
+          <Nav />
+          <Component {...pageProps} />
+        </BackgroundColor>
       </ApolloProvider>
     </ChakraProvider>
   )
