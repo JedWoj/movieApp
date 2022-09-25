@@ -1,6 +1,6 @@
 import type { AppProps } from 'next/app';
 import Nav from '../components/Nav/Nav';
-import BackgroundColor from '../components/Nav/UI/GlobalStyles';
+import BackgroundColor from '../components/UI/GlobalStyles';
 import { ChakraProvider } from '@chakra-ui/react'; 
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 

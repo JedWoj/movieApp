@@ -1,4 +1,4 @@
-import { Box, Container, Flex, Heading } from '@chakra-ui/react';
+import { Container, Flex } from '@chakra-ui/react';
 import FilmwebLogo from '../../public/images/FilmwebLogo.png';
 import Link from 'next/link';
 import Image from 'next/image';
