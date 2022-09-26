@@ -17,7 +17,7 @@ const CarouselBtnRight = ({setActivePage}: CarouselBtnRightProps) => {
             bottom={0} 
             width={{base: 6}} 
             backgroundColor={'rgba(0,0,0,0.25)'}
-            onClick={() => setActivePage('+')}
+            onClick={() => setActivePage((activePage: number) => activePage + 1)}
         >
             <ArrowRightIcon />
         </Center>)

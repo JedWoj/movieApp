@@ -4,7 +4,7 @@ import BackgroundColor from '../components/UI/GlobalStyles';
 import { ChakraProvider } from '@chakra-ui/react'; 
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
-const client = new ApolloClient({
+export const client = new ApolloClient({
   uri: 'https://tmdb.apps.quintero.io/',
   cache: new InMemoryCache(),
 })
