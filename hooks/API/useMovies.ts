@@ -1,25 +1,20 @@
 import { useQuery, gql } from '@apollo/client';
 
-type popularMoviesGenre = {
-  __typename: string,
-  name: string,
-}
-
-type popularMoviesEdge = {
+export type PopularMoviesEdgeType = {
   __typename: string,
   node: {
     __typename: string,
-    originalTitle: string,
-    budget: number,
-    genres: popularMoviesGenre[]
+    id: string,
+    poster: string,
+    title: string
   }
 }
 
-type popularMovies = {
+type PopularMovies = {
   movies: {
     popular: {
       __typename: string,
-      edges: popularMoviesEdge[]
+      edges: PopularMoviesEdgeType[]
     }
   }
 } 
@@ -30,8 +25,9 @@ query {
       popular {
         edges {
           node {
-            originalTitle
-            budget
+            id
+            title
+            poster(size:W342)
             genres {
               name
             }
@@ -43,6 +39,6 @@ query {
 `
 
 export const useMovie = () => {
-  const {error, data, loading} = useQuery<popularMovies>(GET_MOVIE);
+  const {error, data, loading} = useQuery<PopularMovies>(GET_MOVIE);
   return {error,data,loading};
 }

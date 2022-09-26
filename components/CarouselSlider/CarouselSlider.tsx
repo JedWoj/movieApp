@@ -4,9 +4,10 @@ import { Center, Flex, Heading } from '@chakra-ui/react';
 import CarouselBtnLeft from './CarouselBtnLeft';
 import CarouselBtnRight from './CarouselBtnRight';
 import CarouselItem from './CarouselItem';
+import { PopularMoviesEdgeType } from '../../hooks/API/useMovies';
 
 interface CarouselSliderProps {
-  movies: number[],
+  movies: PopularMoviesEdgeType[] | undefined,
 }
 
 const CarouselSlider = ({movies}: CarouselSliderProps) => {
@@ -14,17 +15,22 @@ const CarouselSlider = ({movies}: CarouselSliderProps) => {
   const [activePage, setActivePage] = useState<number>(0);
   const [numOfItems, setNumOfItems] = useState<number>(5); 
 
+  console.log(width);
+  console.log(numOfItems)
+
   useEffect(() => {
     window.innerWidth > 768 ? setNumOfItems(5) : setNumOfItems(3);
-  },[])
+  },[movies])
   
   useEffect(() => {
     width > 768 ? setNumOfItems(5) : setNumOfItems(3);
   },[width])
 
+  if(!movies) return <div>Loading</div>
+
   const renderCarouselItems = () => {
     const items = [...movies].slice(activePage * numOfItems,(activePage * numOfItems) + numOfItems);
-    return items.map((itm) => <CarouselItem key={itm} name={itm} />)
+    return items.map((itm) => <CarouselItem key={itm.node.id} title={itm.node.title} poster={itm.node.poster} />)
   }
 
   return(
