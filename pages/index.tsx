@@ -7,7 +7,7 @@ const Home: NextPage = () => {
   console.log(data?.movies.popular)
   return (
     <div>
-      <CarouselSlider movies={data?.movies.popular.edges}/>
+      <CarouselSlider name='Explore Popular Films' movies={data?.movies.popular.edges}/>
     </div>
   )
 }

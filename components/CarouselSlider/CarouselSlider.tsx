@@ -8,9 +8,10 @@ import { PopularMoviesEdgeType } from '../../hooks/API/useMovies';
 
 interface CarouselSliderProps {
   movies: PopularMoviesEdgeType[] | undefined,
+  name: string,
 }
 
-const CarouselSlider = ({movies}: CarouselSliderProps) => {
+const CarouselSlider = ({movies, name}: CarouselSliderProps) => {
   const { width } = useWindowSize();
   const [activePage, setActivePage] = useState<number>(0);
   const [numOfItems, setNumOfItems] = useState<number>(5); 
@@ -30,13 +31,13 @@ const CarouselSlider = ({movies}: CarouselSliderProps) => {
 
   const renderCarouselItems = () => {
     const items = [...movies].slice(activePage * numOfItems,(activePage * numOfItems) + numOfItems);
-    return items.map((itm) => <CarouselItem key={itm.node.id} title={itm.node.title} poster={itm.node.poster} />)
+    return items.map((itm) => <CarouselItem key={itm.node.id} title={itm.node.title} id={itm.node.id} poster={itm.node.poster} />)
   }
 
   return(
     <Flex flexDirection={'column'} marginTop={12} gap={6}>
       <Heading width={{base: '90vw', sm: '80vw', lg: '70vw'}} marginX={'auto'} >
-        Category
+        {name}
       </Heading>
       <Center 
         overflowX={'hidden'} 
