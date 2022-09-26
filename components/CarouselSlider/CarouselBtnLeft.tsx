@@ -1,5 +1,6 @@
 import React from 'react';
 import { Center } from '@chakra-ui/react';
+import { ArrowLeftIcon } from '@chakra-ui/icons';
 
 interface CarouselBtnLeftProps {
     setActivePage: Function,
@@ -17,7 +18,7 @@ const CarouselBtnLeft = ({setActivePage}: CarouselBtnLeftProps) => {
         backgroundColor={'rgba(0,0,0,0.25)'}
         onClick={() => setActivePage('-')}
     >
-        -
+        <ArrowLeftIcon />
     </Center>)
 }
 

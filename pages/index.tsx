@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { useMovie } from '../hooks/useMovies'
+import { useMovie } from '../hooks/API/useMovies'
 import CarouselSlider from '../components/CarouselSlider/CarouselSlider';
 
 const DUMMY_ARR = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];

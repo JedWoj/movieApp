@@ -1,11 +1,13 @@
 import React from 'react';
 import { Center } from '@chakra-ui/react';
+import { ArrowRightIcon } from '@chakra-ui/icons';
 
 interface CarouselBtnRightProps {
     setActivePage: Function;
 }
 
 const CarouselBtnRight = ({setActivePage}: CarouselBtnRightProps) => {
+
     return(
         <Center 
             position={'absolute'} 
@@ -17,7 +19,7 @@ const CarouselBtnRight = ({setActivePage}: CarouselBtnRightProps) => {
             backgroundColor={'rgba(0,0,0,0.25)'}
             onClick={() => setActivePage('+')}
         >
-            +
+            <ArrowRightIcon />
         </Center>)
 }
 
