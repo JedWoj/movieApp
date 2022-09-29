@@ -1,5 +1,4 @@
 import type { GetStaticProps, NextPage } from 'next';
-import { useMovie } from '../hooks/API/useMovies';
 import CarouselSlider from '../components/CarouselSlider/CarouselSlider';
 import { TrendingMoviesType } from '../types/trendingMoviesType';
 

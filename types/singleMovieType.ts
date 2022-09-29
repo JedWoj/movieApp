@@ -4,7 +4,7 @@ type SingleMovieGenreType = {
 }
 
 export type SingleMovieType = {
-    data: {
+    movie: {
         adult: boolean,
         backdrop_path: string,
         budget: number,
