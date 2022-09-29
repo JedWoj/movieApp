@@ -2,13 +2,15 @@ import React from 'react';
 import { Container } from '@chakra-ui/react';
 import { GetStaticProps, GetStaticPaths, GetStaticPropsContext } from 'next';
 import { SingleMovieType } from '../../types/singleMovieType';
-import SingleFilmCover from '../../components/SingleFilmCover/SingleFilmCover';
+import SingleFilmCover from '../../components/SingleFilm/SingleFilmCover';
+import SingleFilmOverview from '../../components/SingleFilm/SingleFilmOverview';
 
 const SingleMoviePage = (data: SingleMovieType) => {
     const { movie } = data;
     return(
-        <Container marginTop={'5'} maxW={'4xl'} backgroundColor={'blue.900'} centerContent>
+        <Container marginTop={'5'} maxW={'4xl'} centerContent>
             <SingleFilmCover movie={movie} />
+            <SingleFilmOverview movie={movie} />
         </Container>
     )
 }

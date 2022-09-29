@@ -1,3 +1,7 @@
+type SingleMovieProductionCountriesType = {
+    name: string,
+}
+
 type SingleMovieGenreType = {
     id: number,
     name: string
@@ -21,6 +25,7 @@ export type SingleMovieType = {
         status: string,
         title: string,
         vote_average: number,
-        vote_count: number
+        vote_count: number,
+        production_countries: SingleMovieProductionCountriesType[],
     }
 }
