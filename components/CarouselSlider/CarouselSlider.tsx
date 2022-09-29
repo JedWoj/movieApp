@@ -4,10 +4,10 @@ import { Center, Flex, Heading } from '@chakra-ui/react';
 import CarouselBtnLeft from './CarouselBtnLeft';
 import CarouselBtnRight from './CarouselBtnRight';
 import CarouselItem from './CarouselItem';
-import { PopularMoviesEdgeType } from '../../hooks/API/useMovies';
+import {TrendingMoviesResult} from '../../types/trendingMoviesType';
 
 interface CarouselSliderProps {
-  movies: PopularMoviesEdgeType[] | undefined,
+  movies: TrendingMoviesResult[] | undefined,
   name: string,
 }
 
@@ -25,10 +25,9 @@ const CarouselSlider = ({movies, name}: CarouselSliderProps) => {
   },[width])
 
   if(!movies) return <div>Loading</div>
-
   const renderCarouselItems = () => {
     const items = [...movies].slice(activePage * numOfItems,(activePage * numOfItems) + numOfItems);
-    return items.map((itm) => <CarouselItem key={itm.node.id} title={itm.node.title} id={itm.node.id} poster={itm.node.poster} />)
+    return items.map((itm) => <CarouselItem key={itm.id} title={itm.title} id={itm.id} poster={itm.poster_path} />)
   }
 
   return(
