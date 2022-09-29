@@ -16,9 +16,6 @@ const CarouselSlider = ({movies, name}: CarouselSliderProps) => {
   const [activePage, setActivePage] = useState<number>(0);
   const [numOfItems, setNumOfItems] = useState<number>(5); 
 
-  console.log(width);
-  console.log(numOfItems)
-
   useEffect(() => {
     window.innerWidth > 768 ? setNumOfItems(5) : setNumOfItems(3);
   },[movies])

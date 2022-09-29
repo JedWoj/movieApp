@@ -10,7 +10,13 @@ interface CarouselItemProps {
 
 const CarouselItem = ({poster, title, id}: CarouselItemProps) => {
     return(
-        <Center flexGrow={1} height={{base: '36', sm: '48', xl: '72'}} flexShrink={{base: 1}} backgroundColor={'red.400'}>
+        <Center 
+            cursor={'pointer'} 
+            flexGrow={1} 
+            height={{base: '36', sm: '48', xl: '72'}} 
+            flexShrink={{base: 1}} 
+            backgroundColor={'red.400'}
+        >
             <Link href={`/films/${id}`}>
                 <Image width={'100%'} height={'100%'} src={poster} alt={title}/>
             </Link>
