@@ -2,25 +2,36 @@ import React from 'react';
 import { Container } from '@chakra-ui/react';
 import { GetStaticProps, GetStaticPaths, GetStaticPropsContext } from 'next';
 import { SingleMovieType } from '../../types/singleMovieType';
+import { MovieCreditsType } from '../../types/movieCreditsType';
+import { MovieReviewsType } from '../../types/movieReviewsType';
+import { getFormattedPromise } from '../../lib/getFormattedPromise';
 import SingleFilmCover from '../../components/SingleFilm/SingleFilmCover';
 import SingleFilmOverview from '../../components/SingleFilm/SingleFilmOverview';
 
-const SingleMoviePage = (data: SingleMovieType) => {
-    const { movie } = data;
+interface SingleMoviePageProps {
+    movieInfo: SingleMovieType,
+    credits: MovieCreditsType,
+    reviews: MovieReviewsType,
+}
+
+const SingleMoviePage = (props: SingleMoviePageProps) => {
     return(
         <Container marginTop={'5'} maxW={'4xl'} centerContent>
-            <SingleFilmCover movie={movie} />
-            <SingleFilmOverview movie={movie} />
+            <SingleFilmCover movieInfo={props.movieInfo} />
+            <SingleFilmOverview movieInfo={props.movieInfo} />
         </Container>
     )
 }
 
 export const getStaticProps: GetStaticProps = async (context: GetStaticPropsContext) => {
     const slug = context.params?.slug;
-    const response = await fetch(`https://api.themoviedb.org/3/movie/${slug}?api_key=${process.env.MOVIE_API}`);
-    const movie = await response.json();
+    let [movieInfo, credits, reviews] = await Promise.all([
+        getFormattedPromise(`https://api.themoviedb.org/3/movie/${slug}?api_key=${process.env.MOVIE_API}`),
+        getFormattedPromise(`https://api.themoviedb.org/3/movie/${slug}/credits?api_key=${process.env.MOVIE_API}&language=en-US`),
+        getFormattedPromise(`https://api.themoviedb.org/3/movie/${slug}/reviews?api_key=${process.env.MOVIE_API}&language=en-US&page=1`)
+    ]);
     return {
-        props: {movie},
+        props: {movieInfo, credits, reviews},
         revalidate: 180
     }
 }
