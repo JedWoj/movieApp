@@ -8,6 +8,7 @@ import { getFormattedPromise } from '../../lib/getFormattedPromise';
 import SingleFilmCover from '../../components/SingleFilm/SingleFilmCover';
 import SingleFilmOverview from '../../components/SingleFilm/SingleFilmOverview';
 import SingleFilmCredits from '../../components/SingleFilm/SingleFilmCredits';
+import SingleFilmReviews from '../../components/SingleFilm/SingleFilmReviews';
 
 interface SingleMoviePageProps {
     movieInfo: SingleMovieType,
@@ -16,12 +17,15 @@ interface SingleMoviePageProps {
 }
 
 const SingleMoviePage = (props: SingleMoviePageProps) => {
+    const { credits,movieInfo,reviews } = props;
+    
     return(
         <Container marginTop={'5'} maxW={'5xl'} centerContent>
-            <SingleFilmCover movieInfo={props.movieInfo} />
-            <SingleFilmOverview movieInfo={props.movieInfo} />
-            <SingleFilmCredits movieCredits={props.credits.cast} type={'Cast'} />
-            <SingleFilmCredits movieCredits={props.credits.crew} type={'Crew'} />
+            <SingleFilmCover movieInfo={movieInfo} />
+            <SingleFilmOverview movieInfo={movieInfo} />
+            <SingleFilmCredits movieCredits={credits.cast} type={'Cast'} />
+            <SingleFilmCredits movieCredits={credits.crew} type={'Crew'} />
+            <SingleFilmReviews reviews={reviews} />
         </Container>
     )
 }

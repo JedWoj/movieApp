@@ -21,7 +21,7 @@ const CastGridItem = ({person}: CastGridItemType) => {
                     <Text>
                         {person.name}
                     </Text>
-                    <Text>
+                    <Text marginTop={'3'} color={'gray.400'}>
                         {isCast(person) ? person.character : person.job}
                     </Text>
                 </Box>

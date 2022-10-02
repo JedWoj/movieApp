@@ -9,7 +9,6 @@ interface SingleFilmCreditsType {
 }
 
 const SingleFilmCredits = ({movieCredits, type}: SingleFilmCreditsType) => {
-    console.log(movieCredits)
     return(
         <Box>
             <Heading marginY={'8'}>

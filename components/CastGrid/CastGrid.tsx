@@ -9,7 +9,7 @@ interface CastGridType  {
 
 const CastGrid = ({persons}: CastGridType) => {
     const renderGrid = () => {
-        const items = persons.map(per => <CastGridItem key={per.id} person={per} />)
+        const items = persons.map(per => <CastGridItem key={Math.random()} person={per} />)
         return items;
     }
 

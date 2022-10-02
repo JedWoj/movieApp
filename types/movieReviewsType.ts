@@ -1,4 +1,4 @@
-type MovieReviewsResultType = {
+export type MovieReviewsResultType = {
     author: string,
     author_details: {
         avatar_path: string,
