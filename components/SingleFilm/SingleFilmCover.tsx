@@ -11,7 +11,7 @@ const SingleFilmCover = ({movieInfo}: SingleFilmCoverProps) => {
 
   return(
       <Box 
-      width={'4xl'} 
+      width={'100%'} 
       boxShadow={'dark-lg'} 
       height={'xl'} 
       backgroundRepeat={'no-repeat'} 

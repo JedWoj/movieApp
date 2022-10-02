@@ -5,6 +5,7 @@ export type MovieCreditsCast = {
     id: number,
     name: string,
     original_name: string;
+    profile_path: string,
 }
 
 export type MovieCreditsCrew = {
@@ -13,6 +14,7 @@ export type MovieCreditsCrew = {
     id: number,
     job: string,
     name: string,
+    profile_path: string,
 }
 
 export type MovieCreditsType = {

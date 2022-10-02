@@ -18,7 +18,7 @@ interface SingleMoviePageProps {
 const SingleMoviePage = (props: SingleMoviePageProps) => {
     console.log(props)
     return(
-        <Container marginTop={'5'} maxW={'4xl'} centerContent>
+        <Container marginTop={'5'} maxW={'5xl'} centerContent>
             <SingleFilmCover movieInfo={props.movieInfo} />
             <SingleFilmOverview movieInfo={props.movieInfo} />
             <SingleFilmCredits movieCredits={props.credits} />

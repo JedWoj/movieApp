@@ -15,7 +15,7 @@ const CastGrid = ({persons}: CastGridType) => {
     }
 
     return(
-        <Grid>
+        <Grid templateColumns={'repeat(auto-fit, minmax(80px, 1fr))'} gridGap={'3'} marginBottom={'10'}>
             {renderGrid()}
         </Grid>
     )
