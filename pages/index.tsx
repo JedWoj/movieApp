@@ -1,12 +1,13 @@
+import { Box } from '@chakra-ui/react';
 import type { GetStaticProps } from 'next';
 import CarouselSlider from '../components/CarouselSlider/CarouselSlider';
 import { TrendingMoviesType } from '../types/trendingMoviesType';
 
 const Home = ({trendingMovies}: TrendingMoviesType) => {
   return (
-    <div>
+    <Box>
       <CarouselSlider name='Explore Popular Films' movies={trendingMovies.results}/>
-    </div>
+    </Box>
   )
 }
 

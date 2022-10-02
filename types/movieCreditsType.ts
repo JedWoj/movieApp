@@ -1,4 +1,4 @@
-type MovieCreditsCast = {
+export type MovieCreditsCast = {
     cast_id: number,
     character: string,
     credit_id: string,
@@ -7,7 +7,7 @@ type MovieCreditsCast = {
     original_name: string;
 }
 
-type MovieCreditsCrew = {
+export type MovieCreditsCrew = {
     credit_id: string,
     department: string,
     id: number,
