@@ -9,13 +9,20 @@ interface CastGridItemType {
 }
 
 const CastGridItem = ({person}: CastGridItemType) => {
+    const isCast = (person: MovieCreditsCast | MovieCreditsCrew): person is MovieCreditsCast => {
+        return (person as MovieCreditsCast).character !== undefined;
+    }
+
     return(
-        <GridItem>
+        <GridItem cursor={'pointer'}>
             <Link href={`persons/${person.id}`}>
                 <Box>
-                    <Image src={`https://image.tmdb.org/t/p/w500/${person.profile_path}`} alt={person.name} width={'5000'} height={'6000'} />
+                    <Image src={person.profile_path ? `https://image.tmdb.org/t/p/w500/${person.profile_path}` : '/../public/images/unknown.png'} alt={person.name} width={'5000'} height={'6000'} />
                     <Text>
                         {person.name}
+                    </Text>
+                    <Text>
+                        {isCast(person) ? person.character : person.job}
                     </Text>
                 </Box>
             </Link> 

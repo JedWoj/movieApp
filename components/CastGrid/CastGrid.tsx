@@ -8,7 +8,6 @@ interface CastGridType  {
 }
 
 const CastGrid = ({persons}: CastGridType) => {
-    console.log(persons)
     const renderGrid = () => {
         const items = persons.map(per => <CastGridItem key={per.id} person={per} />)
         return items;
