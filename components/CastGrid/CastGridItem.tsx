@@ -15,9 +15,9 @@ const CastGridItem = ({person}: CastGridItemType) => {
 
     return(
         <GridItem cursor={'pointer'}>
-            <Link href={`persons/${person.id}`}>
+            <Link href={`/persons/${person.id}`}>
                 <Box>
-                    <Image src={person.profile_path ? `https://image.tmdb.org/t/p/w500/${person.profile_path}` : '/../public/images/unknown.png'} alt={person.name} width={'5000'} height={'6000'} />
+                    <Image src={person.profile_path ? `https://image.tmdb.org/t/p/w500/${person.profile_path}` : '/../public/images/unknown.png'} alt={person.name} width={'5000'} height={'7000'} />
                     <Text fontWeight={'bold'}>
                         {person.name}
                     </Text>
