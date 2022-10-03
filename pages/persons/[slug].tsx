@@ -4,6 +4,7 @@ import { GetStaticProps, GetStaticPropsContext, GetStaticPaths } from 'next';
 import { getFormattedPromise } from '../../lib/getFormattedPromise';
 import { SinglePersonDetailsType } from '../../types/personDetailsType';
 import { MovieCreditsType } from '../../types/movieCreditsType';
+import SinglePersonDetail from '../../components/SinglePerson/SinglePersonDetails';
 
 interface SinglePersonPageType {
     personDetails: SinglePersonDetailsType,
@@ -16,7 +17,7 @@ const SinglePersonPage = (props: SinglePersonPageType) => {
 
     return(
         <Container marginTop={'5'} maxW={'5xl'} centerContent>
-
+            <SinglePersonDetail details={personDetails} />
         </Container>
     )
 }
