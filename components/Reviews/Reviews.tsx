@@ -9,7 +9,6 @@ interface ReviewsType {
 
 const Reviews = ({reviews}: ReviewsType) => {
     const [activePage, setActivePage] = useState<number>(1);
-    console.log(reviews)
     
     const renderReviews = () => {
         const activeReviews = reviews.results.slice(0, activePage + 2).map(rev => <SingleReview key={rev.created_at} review={rev} />);
