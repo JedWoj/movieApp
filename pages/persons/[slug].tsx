@@ -3,12 +3,13 @@ import { Container } from '@chakra-ui/react';
 import { GetStaticProps, GetStaticPropsContext, GetStaticPaths } from 'next';
 import { getFormattedPromise } from '../../lib/getFormattedPromise';
 import { SinglePersonDetailsType } from '../../types/personDetailsType';
-import { MovieCreditsType } from '../../types/movieCreditsType';
+import { PersonRolesType } from '../../types/personRolesType';
 import SinglePersonDetail from '../../components/SinglePerson/SinglePersonDetails';
+import FilmsGrid from '../../components/FilmsGrid/FilmsGrid';
 
 interface SinglePersonPageType {
     personDetails: SinglePersonDetailsType,
-    credits: MovieCreditsType,
+    credits: PersonRolesType,
 }
 
 const SinglePersonPage = (props: SinglePersonPageType) => {
@@ -18,6 +19,7 @@ const SinglePersonPage = (props: SinglePersonPageType) => {
     return(
         <Container marginTop={'5'} maxW={'5xl'} centerContent>
             <SinglePersonDetail details={personDetails} />
+            <FilmsGrid persons={credits.cast.slice(0,6)} />
         </Container>
     )
 }
