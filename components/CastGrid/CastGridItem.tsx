@@ -18,10 +18,10 @@ const CastGridItem = ({person}: CastGridItemType) => {
             <Link href={`persons/${person.id}`}>
                 <Box>
                     <Image src={person.profile_path ? `https://image.tmdb.org/t/p/w500/${person.profile_path}` : '/../public/images/unknown.png'} alt={person.name} width={'5000'} height={'6000'} />
-                    <Text>
+                    <Text fontWeight={'bold'}>
                         {person.name}
                     </Text>
-                    <Text marginTop={'3'} color={'gray.400'}>
+                    <Text marginTop={'3'}>
                         {isCast(person) ? person.character : person.job}
                     </Text>
                 </Box>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, GridItem, Box } from '@chakra-ui/react';
+import { Grid } from '@chakra-ui/react';
 import { MovieCreditsCrew, MovieCreditsCast } from '../../types/movieCreditsType';
 import CastGridItem from '../CastGrid/CastGridItem';
 

@@ -1,6 +1,7 @@
 import React from 'react';
-import { Box,Flex } from '@chakra-ui/react';
+import { Box,Flex,Text,Avatar } from '@chakra-ui/react';
 import { MovieReviewsResultType } from '../../types/movieReviewsType';
+import Image from 'next/image';
 
 interface SingleReviewType {
     review: MovieReviewsResultType;
@@ -8,18 +9,19 @@ interface SingleReviewType {
 
 const SingleReview = ({review}: SingleReviewType) => {
     return(
-        <Box marginY={'4'}>
-            <Flex gap={'2'}>
-                <Box>
+        <Box bgGradient={'linear(to-tr, #ff335d, #3f5efb)'} padding={'5'} borderRadius={'2xl'} boxShadow={'dark-lg'} marginY={'10'}>
+            <Flex fontSize={'2xl'} alignItems={'center'} marginBottom={'4'} gap={'2'}>
+                <Avatar src={`https://image.tmdb.org/t/p/w500${review.author_details.avatar_path}`}/>    
+                <Text>
                     {review.author}
-                </Box>
-                <Box>
+                </Text>
+                <Text>
                     {new Date(review.created_at).toLocaleTimeString()}
-                </Box>
+                </Text>
             </Flex>
-            <Box>
+            <Text>
                 {review.content}
-            </Box>
+            </Text>
         </Box>
     )
 }
