@@ -5,13 +5,18 @@ import CarouselBtnLeft from './CarouselBtnLeft';
 import CarouselBtnRight from './CarouselBtnRight';
 import CarouselItem from './CarouselItem';
 import {TrendingMoviesResult} from '../../types/trendingMoviesType';
+import {UpcomingMovieResultsType} from '../../types/upcomingMovieType';
 
 interface CarouselSliderProps {
-  movies: TrendingMoviesResult[] | undefined,
+  movies: TrendingMoviesResult[] | UpcomingMovieResultsType[],
   name: string,
 }
 
 const CarouselSlider = ({movies, name}: CarouselSliderProps) => {
+  // const isTrending = (movies: TrendingMoviesResult[] | UpcomingMovieResultsType[]): movies is TrendingMoviesResult[] => {
+  //   return (movies as TrendingMoviesResult[]).at(0)?.first_air_date !== undefined;
+  // }
+
   const { width } = useWindowSize();
   const [activePage, setActivePage] = useState<number>(0);
   const [numOfItems, setNumOfItems] = useState<number>(5); 
@@ -45,7 +50,7 @@ const CarouselSlider = ({movies, name}: CarouselSliderProps) => {
       >
         {activePage > 0 && <CarouselBtnLeft setActivePage={setActivePage} />}
           {renderCarouselItems()}
-        {activePage < (15/numOfItems) - 1 && <CarouselBtnRight setActivePage={setActivePage} />}
+        {activePage < (20/numOfItems) - 1 && <CarouselBtnRight setActivePage={setActivePage} />}
       </Center>
     </Flex>
   )

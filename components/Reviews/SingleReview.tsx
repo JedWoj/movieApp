@@ -15,9 +15,6 @@ const SingleReview = ({review}: SingleReviewType) => {
                 <Text>
                     {review.author}
                 </Text>
-                <Text>
-                    {new Date(review.created_at).toLocaleTimeString()}
-                </Text>
             </Flex>
             <Text>
                 {review.content}

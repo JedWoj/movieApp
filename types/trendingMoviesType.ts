@@ -9,7 +9,5 @@ export type TrendingMoviesResult = {
 }
   
 export type TrendingMoviesType = {
-  trendingMovies: {
-    results: TrendingMoviesResult[];
-  }
+  results: TrendingMoviesResult[];
 }
