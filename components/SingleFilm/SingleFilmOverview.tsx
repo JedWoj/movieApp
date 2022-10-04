@@ -20,7 +20,7 @@ const SingleFilmOverview = ({movieInfo}: SingleFilmOverviewProps) => {
 
     return(
         <Flex gap={'5'} marginY={'16'} fontWeight={'bold'}>
-            <Image width={'850vw'} height={'1000vw'} src={`https://image.tmdb.org/t/p/w500${movieInfo.poster_path}`} alt={`Poster of ${movieInfo.title}`} />
+            <Image width={'850vw'} height={'1000vw'} src={movieInfo.poster_path ? `https://image.tmdb.org/t/p/w500${movieInfo.poster_path}`: '/../public/images/unknown.png'} alt={`Poster of ${movieInfo.title}`} />
             <Box>
                 <Text>
                     {movieInfo.overview}

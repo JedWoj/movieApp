@@ -18,8 +18,8 @@ const SinglePersonPage = (props: SinglePersonPageType) => {
     return(
         <Container marginTop={'5'} maxW={'5xl'} centerContent>
             <SinglePersonDetail details={personDetails} />
-            <SinglePersonCredits type={'Casting in:'} persons={credits.cast.slice(0,6)} />
-            <SinglePersonCredits type={'Part of the crew in:'} persons={credits.crew.slice(0,6)} />
+            {credits.cast.length > 0 && <SinglePersonCredits type={'Casting in:'} persons={credits.cast.slice(0,6)} />}
+            {credits.crew.length > 0 && <SinglePersonCredits type={'Part of the crew in:'} persons={credits.crew.slice(0,6)} />}
         </Container>
     )
 }

@@ -13,6 +13,7 @@ const CastGridItem = ({person}: CastGridItemType) => {
         return (person as MovieCreditsCast).character !== undefined;
     }
 
+
     return(
         <GridItem cursor={'pointer'}>
             <Link href={`/persons/${person.id}`}>

@@ -9,13 +9,14 @@ interface SinglePersonType {
 
 const SinglePersonDetails = (props: SinglePersonType) => {
     const { details } = props;
+    console.log(details)
     
     return(
         <Flex gap={'5'} fontWeight={'bold'}>
             <Box flexBasis={'30%'}>
                 <Image 
                     alt={details.name} 
-                    src={`https://image.tmdb.org/t/p/w500/${details.profile_path}`} 
+                    src={details.profile_path ? `https://image.tmdb.org/t/p/w500/${details.profile_path}` : '/../public/images/unknown.png'} 
                     width={1500} 
                     height={2050} 
                 />    
@@ -25,17 +26,17 @@ const SinglePersonDetails = (props: SinglePersonType) => {
                     {details.name}
                 </Heading>
                 <Text>
-                    Birthday: {details.birthday} 
+                    Birthday: {details.birthday ? details.birthday : 'unknown'} 
                 </Text>
                 <Text>
-                    Birthplace: {details.place_of_birth}
+                    Birthplace: {details.place_of_birth ? details.place_of_birth : 'unknown'}
                 </Text>
                 <Text>
-                    Known for: {details.known_for_department}
+                    Known for: {details.known_for_department ? details.known_for_department : 'unknown'}
                 </Text>
-                <Text>
+                {details.biography.length > 0 && <Text>
                     Biography:
-                </Text>
+                </Text>}
                 <Text fontSize={'xs'}>
                     {details.biography}
                 </Text>

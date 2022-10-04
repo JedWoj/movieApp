@@ -2,15 +2,16 @@ import react from 'react';
 import { Box, Heading, Center, Text, Flex } from "@chakra-ui/react";
 import { StarIcon } from '@chakra-ui/icons';
 import { SingleMovieType } from '../../types/singleMovieType';
+import { url } from 'inspector';
 
 interface SingleFilmCoverProps {
     movieInfo : SingleMovieType;
 }
 
 const SingleFilmCover = ({movieInfo}: SingleFilmCoverProps) => {
-
-  return(
+    return(
       <Box 
+      backgroundColor={'blackAlpha.500'}
       width={'100%'} 
       boxShadow={'dark-lg'} 
       height={'xl'} 
@@ -18,7 +19,7 @@ const SingleFilmCover = ({movieInfo}: SingleFilmCoverProps) => {
       backgroundSize={'cover'} 
       backgroundPosition={'center'} 
       position={'relative'} 
-      backgroundImage={`https://image.tmdb.org/t/p/w500${movieInfo.backdrop_path}`}
+      backgroundImage={movieInfo.backdrop_path ? `https://image.tmdb.org/t/p/w500${movieInfo.backdrop_path}`: `https://image.tmdb.org/t/p/w500${movieInfo.poster_path}`}
       >
                 <Center position={'absolute'} bottom={'6'} left={'6'}>
                     <Flex flexDirection={'column'}> 
