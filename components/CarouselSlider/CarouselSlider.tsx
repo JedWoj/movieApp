@@ -15,14 +15,14 @@ const CarouselSlider = ({movies, name}: CarouselSliderProps) => {
   const { width } = useWindowSize();
   const [activePage, setActivePage] = useState<number>(0);
   const [numOfItems, setNumOfItems] = useState<number>(5); 
-
-  useEffect(() => {
-    window.innerWidth > 768 ? setNumOfItems(5) : setNumOfItems(3);
-  },[movies])
   
   useEffect(() => {
     width > 768 ? setNumOfItems(5) : setNumOfItems(3);
   },[width])
+
+  useEffect(() => {
+    window.innerWidth > 768 ? setNumOfItems(5) : setNumOfItems(3);
+  },[movies])
 
   if(!movies) return <div>Loading</div>
   const renderCarouselItems = () => {
