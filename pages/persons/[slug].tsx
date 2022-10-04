@@ -5,7 +5,7 @@ import { getFormattedPromise } from '../../lib/getFormattedPromise';
 import { SinglePersonDetailsType } from '../../types/personDetailsType';
 import { PersonRolesType } from '../../types/personRolesType';
 import SinglePersonDetail from '../../components/SinglePerson/SinglePersonDetails';
-import FilmsGrid from '../../components/FilmsGrid/FilmsGrid';
+import SinglePersonCredits from '../../components/SinglePerson/SinglePersonCredits';
 
 interface SinglePersonPageType {
     personDetails: SinglePersonDetailsType,
@@ -14,12 +14,12 @@ interface SinglePersonPageType {
 
 const SinglePersonPage = (props: SinglePersonPageType) => {
     const { credits,personDetails } = props;
-    console.log(credits,personDetails);
 
     return(
         <Container marginTop={'5'} maxW={'5xl'} centerContent>
             <SinglePersonDetail details={personDetails} />
-            <FilmsGrid persons={credits.cast.slice(0,6)} />
+            <SinglePersonCredits type={'Casting in:'} persons={credits.cast.slice(0,6)} />
+            <SinglePersonCredits type={'Part of the crew in:'} persons={credits.crew.slice(0,6)} />
         </Container>
     )
 }

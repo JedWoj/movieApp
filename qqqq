@@ -1,0 +1,155 @@
+[33mcommit ea9f304c87f29de210c113b63fa9f2f610d60c93[m[33m ([m[1;36mHEAD -> [m[1;32mdev[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/dev[m[33m, [m[1;32mmain[m[33m)[m
+Author: JedWoj <jedwojc@gmail.com>
+Date:   Mon Oct 3 22:39:37 2022 +0200
+
+    PersonRoles added
+
+[33mcommit 46a45ee969d73fe3e0aaa9e4ca6154529a459ec3[m
+Author: JedWoj <jedwojc@gmail.com>
+Date:   Mon Oct 3 20:51:07 2022 +0200
+
+    person details added
+
+[33mcommit 4c12c72e4d2046814ad8e5b0fedda1f879b1bd18[m
+Author: JedWoj <jedwojc@gmail.com>
+Date:   Mon Oct 3 18:14:42 2022 +0200
+
+    Person page types and API
+
+[33mcommit 4bdf48a927342bfc48e5d175c6df267ef32eb212[m
+Author: JedWoj <jedwojc@gmail.com>
+Date:   Mon Oct 3 12:20:01 2022 +0200
+
+    NoReviews component added
+
+[33mcommit 7681802ba0032f3f043a2b28e3c602bb5a541abe[m
+Author: JedWoj <jedwojc@gmail.com>
+Date:   Mon Oct 3 11:51:35 2022 +0200
+
+    reviews section finished
+
+[33mcommit d9dc22a58f5a68652d281491f395fbcb5822f77b[m
+Author: JedWoj <jedwojc@gmail.com>
+Date:   Mon Oct 3 01:11:21 2022 +0200
+
+    Reviews section implementation - WIP
+
+[33mcommit 70215a30a4b5ea59694bd2ee4246fff961311b5c[m
+Author: JedWoj <jedwojc@gmail.com>
+Date:   Sun Oct 2 23:15:02 2022 +0200
+
+    cast and crew part finished
+
+[33mcommit 9eda4ed08788f8e6abff10f4d8ff2eab62a14225[m
+Author: JedWoj <jedwojc@gmail.com>
+Date:   Sun Oct 2 15:42:16 2022 +0200
+
+    cast grid implemented
+
+[33mcommit 83889c4321f5769fb9cbad7bb52974c675522ae5[m
+Author: JedWoj <jedwojc@gmail.com>
+Date:   Sun Oct 2 14:13:10 2022 +0200
+
+    implementing cast and crew grid WIP
+
+[33mcommit 5e752bdc453f7cb381525114be364bb8645523c1[m
+Author: JedWoj <jedwojc@gmail.com>
+Date:   Fri Sep 30 01:36:56 2022 +0200
+
+    Promise all implemented and TS debugged
+
+[33mcommit 09f9ed9f846379fd51abf83c8247ec05451506d3[m
+Author: JedWoj <jedwojc@gmail.com>
+Date:   Thu Sep 29 23:55:27 2022 +0200
+
+    SingleFilmOverview implemented
+
+[33mcommit 8827c8fbcdccaa719e1e460067880be48f3096cb[m
+Author: JedWoj <jedwojc@gmail.com>
+Date:   Thu Sep 29 21:38:51 2022 +0200
+
+    SingleFilmCover finished
+
+[33mcommit 5cdde23c46a0474ace71ab1427f1b2364332a143[m
+Author: JedWoj <jedwojc@gmail.com>
+Date:   Thu Sep 29 15:56:59 2022 +0200
+
+    single movie bug fixed
+
+[33mcommit dc11a7af08bc2843c659ca7bda0ddbb9cb7a520a[m
+Author: JedWoj <jedwojc@gmail.com>
+Date:   Thu Sep 29 15:42:40 2022 +0200
+
+    switching to REST finished
+
+[33mcommit 5ecab17206aeda98957f9dbf0c77944b9d149b78[m
+Author: JedWoj <jedwojc@gmail.com>
+Date:   Thu Sep 29 12:12:39 2022 +0200
+
+    switching to REST API
+
+[33mcommit c488a003f5c1b38e64b8389b62ce0b3b121f18e6[m
+Author: JedWoj <jedwojc@gmail.com>
+Date:   Mon Sep 26 21:35:46 2022 +0200
+
+    carousel logic almost finished
+
+[33mcommit 8ad45163333c9c92cf6c8ecae2bc0f76572a5d89[m
+Author: JedWoj <jedwojc@gmail.com>
+Date:   Mon Sep 26 20:23:44 2022 +0200
+
+    carousel improvements and data fetching
+
+[33mcommit c0784e3ef7d6f67f8a71ef61f841409e1e674721[m
+Author: JedWoj <jedwojc@gmail.com>
+Date:   Mon Sep 26 16:25:33 2022 +0200
+
+    API fix
+
+[33mcommit 93c566a2bf8a4f01b3a726a59036c2eabb1148d7[m
+Author: JedWoj <jedwojc@gmail.com>
+Date:   Mon Sep 26 14:30:09 2022 +0200
+
+    responsive carousel WIP
+
+[33mcommit 13cdb2004dfcadb30f6c18ee1a53dc69bb3de830[m
+Author: JedWoj <jedwojc@gmail.com>
+Date:   Mon Sep 26 01:05:53 2022 +0200
+
+    day 1 finished
+
+[33mcommit d575adf4ba8bcc15c7daba9c3b28554679371493[m
+Author: JedWoj <jedwojc@gmail.com>
+Date:   Sun Sep 25 21:56:36 2022 +0200
+
+    basic carousel functions implemented
+
+[33mcommit 59062cdd421f55abaa9cc158d95b424f4332ef93[m
+Author: JedWoj <jedwojc@gmail.com>
+Date:   Sun Sep 25 20:35:43 2022 +0200
+
+    carousel implementation part 1
+
+[33mcommit f20d3acf81399260171212be3355bbbf86fee887[m
+Author: JedWoj <jedwojc@gmail.com>
+Date:   Sun Sep 25 17:33:09 2022 +0200
+
+    beta version of nav added
+
+[33mcommit 25f3781f03c98808818f3f7fc88f2e0dd20633a7[m
+Author: JedWoj <jedwojc@gmail.com>
+Date:   Sun Sep 25 16:20:44 2022 +0200
+
+    GlobalStyles implemented
+
+[33mcommit 23747fe634177b94de27305e3230d3c0535e6a4f[m
+Author: JedWoj <jedwojc@gmail.com>
+Date:   Sun Sep 25 15:09:29 2022 +0200
+
+    preparation
+
+[33mcommit 8ce229813fd486c024d687c249fb6277d4b2f4fa[m
+Author: JedWoj <jedwojc@gmail.com>
+Date:   Sat Sep 24 20:35:54 2022 +0200
+
+    Initial commit from Create Next App

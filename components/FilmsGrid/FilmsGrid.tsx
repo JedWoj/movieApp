@@ -1,10 +1,10 @@
 import React from 'react';
 import { Grid } from '@chakra-ui/react';
-import { PersonRolesCastType } from '../../types/personRolesType';
+import { PersonRolesCastType, PersonRolesCrewType } from '../../types/personRolesType';
 import FilmsGridItem from '../FilmsGrid/FilmsGridItem';
 
 interface FilmsGridType  {
-    persons: PersonRolesCastType[],
+    persons: PersonRolesCastType[] | PersonRolesCrewType[],
 }
 
 const FilmsGrid = ({persons}: FilmsGridType) => {

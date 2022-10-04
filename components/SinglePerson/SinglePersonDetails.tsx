@@ -12,7 +12,7 @@ const SinglePersonDetails = (props: SinglePersonType) => {
     
     return(
         <Flex gap={'5'} fontWeight={'bold'}>
-            <Box>
+            <Box flexBasis={'30%'}>
                 <Image 
                     alt={details.name} 
                     src={`https://image.tmdb.org/t/p/w500/${details.profile_path}`} 
@@ -20,7 +20,7 @@ const SinglePersonDetails = (props: SinglePersonType) => {
                     height={2050} 
                 />    
             </Box>
-            <Flex flexDirection={'column'} gap={'3'}>
+            <Flex flexBasis={'70%'} flexDirection={'column'} gap={'3'}>
                 <Heading>
                     {details.name}
                 </Heading>
@@ -32,6 +32,9 @@ const SinglePersonDetails = (props: SinglePersonType) => {
                 </Text>
                 <Text>
                     Known for: {details.known_for_department}
+                </Text>
+                <Text>
+                    Biography:
                 </Text>
                 <Text fontSize={'xs'}>
                     {details.biography}
