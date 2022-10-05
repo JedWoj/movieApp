@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box,Flex,Text,Avatar } from '@chakra-ui/react';
 import { MovieReviewsResultType } from '../../types/movieReviewsType';
-import Image from 'next/image';
 
 interface SingleReviewType {
     review: MovieReviewsResultType;

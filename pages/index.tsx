@@ -12,7 +12,6 @@ interface HomeType {
 }
 
 const Home = ({trendingMovies, topRated, upcoming}: HomeType) => {
-  console.log(upcoming)
   return (
     <Box paddingBottom={'10'}>
       <CarouselSlider name='Top Rated Movies' movies={topRated.results} />
