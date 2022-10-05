@@ -1,13 +1,28 @@
 import React from 'react';
 import { Box } from '@chakra-ui/react';
 import SelectCategory from '../../components/SelectCategory/SelectCategory';
+import { GetStaticProps } from 'next';
+import { GenresType } from '../../types/genresType';
 
-const FilmsPage = () => {
+interface FilmsPageType {
+    genres: GenresType
+}
+
+const FilmsPage = ({genres}: FilmsPageType) => {
     return(
         <Box>
-            <SelectCategory />
+            <SelectCategory genres={genres} />
         </Box>
     )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+    const response = await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.MOVIE_API}`);
+    const genres = await response.json();
+    return {
+        props: {genres},
+        revalidate: 180
+    }
 }
 
 export default FilmsPage;

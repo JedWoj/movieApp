@@ -1,11 +1,16 @@
 import React from 'react';
-import { Box } from '@chakra-ui/react';
+import { Center } from '@chakra-ui/react';
 
-const SelectCategoryItem = () => {
+interface SelectCategoryItemType {
+    category: string,
+    genreId: number
+}
+
+const SelectCategoryItem = ({category, genreId}: SelectCategoryItemType) => {
     return(
-        <Box>
-            
-        </Box>
+        <Center borderWidth={'thin'} padding={'2.5'} width={'28'} cursor={'pointer'} borderRadius={'full'} borderColor={'white'}>
+            {category}
+        </Center>
     )
 }
 
