@@ -8,7 +8,22 @@ interface SelectCategoryItemType {
 
 const SelectCategoryItem = ({category, genreId}: SelectCategoryItemType) => {
     return(
-        <Center borderWidth={'thin'} padding={'2.5'} width={'28'} cursor={'pointer'} borderRadius={'full'} borderColor={'white'}>
+        <Center 
+            onClick={() => console.log(genreId)}
+            _hover={{
+                backgroundColor: 'purple.600',
+            }} 
+            borderWidth={'thin'} 
+            padding={'2.5'} 
+            width={'28'} 
+            cursor={'pointer'} 
+            borderRadius={'full'} 
+            borderColor={'white'}
+            backgroundColor={'inherit'}
+            transitionDuration={'300ms'}
+            transitionProperty={'all'}
+            transitionTimingFunction={'ease'}
+        >
             {category}
         </Center>
     )

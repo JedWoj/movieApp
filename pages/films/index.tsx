@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Center, Container } from '@chakra-ui/react';
+import { Container } from '@chakra-ui/react';
 import SelectCategory from '../../components/SelectCategory/SelectCategory';
 import { GetStaticProps } from 'next';
 import { GenresType } from '../../types/genresType';
