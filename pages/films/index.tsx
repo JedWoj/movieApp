@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box } from '@chakra-ui/react';
+import { Box, Center, Container } from '@chakra-ui/react';
 import SelectCategory from '../../components/SelectCategory/SelectCategory';
 import { GetStaticProps } from 'next';
 import { GenresType } from '../../types/genresType';
@@ -10,9 +10,12 @@ interface FilmsPageType {
 
 const FilmsPage = ({genres}: FilmsPageType) => {
     return(
-        <Box>
+        <>
             <SelectCategory genres={genres} />
-        </Box>
+            <Container maxWidth={'5xl'}>
+        
+            </Container>
+        </>
     )
 }
 

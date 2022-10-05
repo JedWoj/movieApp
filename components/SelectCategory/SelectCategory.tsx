@@ -8,13 +8,13 @@ interface SelectCategoryType {
 }
 
 const SelectCategory = ({genres}: SelectCategoryType) => {
-    console.log(genres, 1);
     const renderCategories = () => {
-        const categories = genres.genres.map(gen => <SelectCategoryItem category={gen.name} genreId={gen.id} key={gen.id} />);
+        const categories = genres.genres.map(gen => <SelectCategoryItem category={gen.name === 'Science Fiction' ? 'SCI-FI' : gen.name} genreId={gen.id} key={gen.id} />);
         return categories;
     }
+
     return(
-        <Flex flexWrap={'wrap'} gap={'3'}>
+        <Flex justifyContent={'center'} flexWrap={'wrap'} gap={'3'}>
             {renderCategories()}
         </Flex>
     )
