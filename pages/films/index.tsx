@@ -13,7 +13,6 @@ const FilmsPage = ({genres}: FilmsPageType) => {
         <>
             <SelectCategory genres={genres} />
             <Container maxWidth={'5xl'}>
-        
             </Container>
         </>
     )

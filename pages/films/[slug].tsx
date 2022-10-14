@@ -18,7 +18,6 @@ interface SingleMoviePageProps {
 
 const SingleMoviePage = (props: SingleMoviePageProps) => {
     const { credits,movieInfo,reviews } = props;
-    
     return(
         <Container marginTop={'5'} maxW={'5xl'} centerContent>
             <SingleFilmCover movieInfo={movieInfo} />
@@ -32,7 +31,7 @@ const SingleMoviePage = (props: SingleMoviePageProps) => {
 
 export const getStaticProps: GetStaticProps = async (context: GetStaticPropsContext) => {
     const slug = context.params?.slug;
-    let [movieInfo, credits, reviews] = await Promise.all([
+    const [movieInfo, credits, reviews] = await Promise.all([
         getFormattedPromise(`https://api.themoviedb.org/3/movie/${slug}?api_key=${process.env.MOVIE_API}`),
         getFormattedPromise(`https://api.themoviedb.org/3/movie/${slug}/credits?api_key=${process.env.MOVIE_API}&language=en-US`),
         getFormattedPromise(`https://api.themoviedb.org/3/movie/${slug}/reviews?api_key=${process.env.MOVIE_API}&language=en-US&page=1`)
