@@ -1,5 +1,7 @@
 import React from 'react';
 import { Center } from '@chakra-ui/react';
+import { useAppDispatch } from '../../reduxHooks';
+import filmsSlice from '../../store/slices/filmsSlice';
 
 interface SelectCategoryItemType {
     category: string,
@@ -7,9 +9,11 @@ interface SelectCategoryItemType {
 }
 
 const SelectCategoryItem = ({category, genreId}: SelectCategoryItemType) => {
+    const dispatch = useAppDispatch();
+
     return(
         <Center 
-            onClick={() => console.log(genreId)}
+            onClick={() => dispatch(filmsSlice.actions.setActiveGenre(genreId))}
             _hover={{
                 backgroundColor: 'purple.600',
             }} 

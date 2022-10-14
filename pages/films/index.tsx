@@ -3,12 +3,15 @@ import { Container } from '@chakra-ui/react';
 import SelectCategory from '../../components/SelectCategory/SelectCategory';
 import { GetStaticProps } from 'next';
 import { GenresType } from '../../types/genresType';
+import { useAppSelector } from '../../reduxHooks';
 
 interface FilmsPageType {
-    genres: GenresType
+    genres: GenresType;
 }
 
 const FilmsPage = ({genres}: FilmsPageType) => {
+    const activeGenre = useAppSelector((state) => state.films.activeGenre);
+    
     return(
         <>
             <SelectCategory genres={genres} />
