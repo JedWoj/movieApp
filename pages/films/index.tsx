@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Container } from '@chakra-ui/react';
 import SelectCategory from '../../components/SelectCategory/SelectCategory';
 import { GetStaticProps } from 'next';
 import { GenresType } from '../../types/genresType';
 import { useAppSelector } from '../../reduxHooks';
+import CarouselSlider from '../../components/CarouselSlider/CarouselSlider';
+import { getFormattedPromise } from '../../lib/getFormattedPromise';
 
 interface FilmsPageType {
     genres: GenresType;
@@ -12,10 +14,15 @@ interface FilmsPageType {
 const FilmsPage = ({genres}: FilmsPageType) => {
     const activeGenre = useAppSelector((state) => state.films.activeGenre);
     
+    useEffect(() => {
+        const movies = getFormattedPromise(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.MOVIE_API}&with_genres=${activeGenre}`);
+    },[activeGenre])
+
     return(
         <>
             <SelectCategory genres={genres} />
             <Container maxWidth={'5xl'}>
+                {/* <CarouselSlider name='test' movies={} /> */}
             </Container>
         </>
     )

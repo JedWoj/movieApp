@@ -26,7 +26,7 @@ const SinglePersonPage = (props: SinglePersonPageType) => {
 
 export const getStaticProps: GetStaticProps = async (context: GetStaticPropsContext) => {
     const slug = context.params?.slug;
-    let [personDetails, credits] = await Promise.all([
+    const [personDetails, credits] = await Promise.all([
         getFormattedPromise(`https://api.themoviedb.org/3/person/${slug}?api_key=${process.env.MOVIE_API}&language=en-US`),
         getFormattedPromise(`https://api.themoviedb.org/3/person/${slug}/movie_credits?api_key=${process.env.MOVIE_API}&language=en-US`),
     ]);
