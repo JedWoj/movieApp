@@ -1,6 +1,6 @@
 import React from 'react';
 import { Center } from '@chakra-ui/react';
-import { useAppDispatch } from '../../reduxHooks';
+import { useAppDispatch, useAppSelector } from '../../reduxHooks';
 import filmsSlice from '../../store/slices/filmsSlice';
 
 interface SelectCategoryItemType {
@@ -10,6 +10,7 @@ interface SelectCategoryItemType {
 
 const SelectCategoryItem = ({category, genreId}: SelectCategoryItemType) => {
     const dispatch = useAppDispatch();
+    const activeGenre = useAppSelector((state) => state.films.activeGenre);
 
     return(
         <Center 
@@ -23,7 +24,7 @@ const SelectCategoryItem = ({category, genreId}: SelectCategoryItemType) => {
             cursor={'pointer'} 
             borderRadius={'full'} 
             borderColor={'white'}
-            backgroundColor={'inherit'}
+            backgroundColor={`${activeGenre === genreId ? 'purple.700' : 'inherit'}`}
             transitionDuration={'300ms'}
             transitionProperty={'all'}
             transitionTimingFunction={'ease'}
