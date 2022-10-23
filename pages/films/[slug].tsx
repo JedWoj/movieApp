@@ -32,9 +32,9 @@ const SingleMoviePage = (props: SingleMoviePageProps) => {
 export const getStaticProps: GetStaticProps = async (context: GetStaticPropsContext) => {
     const slug = context.params?.slug;
     const [movieInfo, credits, reviews] = await Promise.all([
-        getFormattedPromise(`https://api.themoviedb.org/3/movie/${slug}?api_key=${process.env.MOVIE_API}`),
-        getFormattedPromise(`https://api.themoviedb.org/3/movie/${slug}/credits?api_key=${process.env.MOVIE_API}&language=en-US`),
-        getFormattedPromise(`https://api.themoviedb.org/3/movie/${slug}/reviews?api_key=${process.env.MOVIE_API}&language=en-US&page=1`)
+        getFormattedPromise(`https://api.themoviedb.org/3/movie/${slug}?api_key=${process.env.NEXT_PUBLIC_MOVIE_API}`),
+        getFormattedPromise(`https://api.themoviedb.org/3/movie/${slug}/credits?api_key=${process.env.NEXT_PUBLIC_MOVIE_API}&language=en-US`),
+        getFormattedPromise(`https://api.themoviedb.org/3/movie/${slug}/reviews?api_key=${process.env.NEXT_PUBLIC_MOVIE_API}&language=en-US&page=1`)
     ]);
     return {
         props: {movieInfo, credits, reviews},
