@@ -23,9 +23,9 @@ const Home = ({trendingMovies, topRated, upcoming}: HomeType) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const [trendingMovies, topRated, upcoming] = await Promise.all([
-    getFormattedPromise(`https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.MOVIE_API}`),
-    getFormattedPromise(`https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.MOVIE_API}`),
-    getFormattedPromise(`https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.MOVIE_API}`),
+    getFormattedPromise(`https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.NEXT_PUBLIC_MOVIE_API}`),
+    getFormattedPromise(`https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.NEXT_PUBLIC_MOVIE_API}`),
+    getFormattedPromise(`https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.NEXT_PUBLIC_MOVIE_API}`),
 ]);
   
   return {

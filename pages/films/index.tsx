@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container } from '@chakra-ui/react';
 import SelectCategory from '../../components/SelectCategory/SelectCategory';
 import { GetStaticProps } from 'next';
 import { GenresType } from '../../types/genresType';
 import { useAppSelector } from '../../reduxHooks';
-import CarouselSlider from '../../components/CarouselSlider/CarouselSlider';
 import { getFormattedPromise } from '../../lib/getFormattedPromise';
+import FilmsList from '../../components/FilmsList/FilmsList';
 
 interface FilmsPageType {
     genres: GenresType;
@@ -13,23 +13,27 @@ interface FilmsPageType {
 
 const FilmsPage = ({genres}: FilmsPageType) => {
     const activeGenre = useAppSelector((state) => state.films.activeGenre);
+    const [activeMovies, setActiveMovies] = useState([]);
     
     useEffect(() => {
-        const movies = getFormattedPromise(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.MOVIE_API}&with_genres=${activeGenre}`);
+        (async () => {
+            const movies = await getFormattedPromise(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.NEXT_PUBLIC_MOVIE_API}&with_genres=${activeGenre}`);
+            setActiveMovies(movies);
+        })();
     },[activeGenre])
-
+    
     return(
         <>
             <SelectCategory genres={genres} />
             <Container maxWidth={'5xl'}>
-                {/* <CarouselSlider name='test' movies={} /> */}
+                <FilmsList />
             </Container>
         </>
     )
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-    const response = await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.MOVIE_API}`);
+    const response = await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.NEXT_PUBLIC_MOVIE_API}`);
     const genres = await response.json();
     return {
         props: {genres},
