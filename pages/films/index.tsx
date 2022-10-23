@@ -6,6 +6,7 @@ import { GenresType } from '../../types/genresType';
 import { useAppSelector } from '../../reduxHooks';
 import { getFormattedPromise } from '../../lib/getFormattedPromise';
 import FilmsList from '../../components/FilmsList/FilmsList';
+import { GenreMovies } from '../../types/genreMovies';
 
 interface FilmsPageType {
     genres: GenresType;
@@ -13,7 +14,7 @@ interface FilmsPageType {
 
 const FilmsPage = ({genres}: FilmsPageType) => {
     const activeGenre = useAppSelector((state) => state.films.activeGenre);
-    const [activeMovies, setActiveMovies] = useState([]);
+    const [activeMovies, setActiveMovies] = useState<undefined | GenreMovies>();
     
     useEffect(() => {
         (async () => {
@@ -22,11 +23,12 @@ const FilmsPage = ({genres}: FilmsPageType) => {
         })();
     },[activeGenre])
     
+    console.log(activeMovies)
     return(
         <>
             <SelectCategory genres={genres} />
             <Container maxWidth={'5xl'}>
-                <FilmsList />
+                <FilmsList films={activeMovies} />
             </Container>
         </>
     )

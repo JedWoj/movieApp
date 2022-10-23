@@ -1,10 +1,20 @@
-import { Box } from '@chakra-ui/react';
+import { OrderedList, ListItem } from '@chakra-ui/react';
+import { SingleGenreMovie, GenreMovies } from '../../types/genreMovies';
 
-const FilmsList = () => {
+interface FilmsListType {
+    films?: GenreMovies;
+}
+
+const FilmsList = ({films}: FilmsListType) => {
+    const renderFilmsList = () => {
+        const items = films?.results.map(itm => <ListItem key={itm.id}>{itm.title}</ListItem>);
+        return items;
+    }
+    
     return(
-        <Box>
-            Films
-        </Box>
+        <OrderedList>
+            {renderFilmsList()}
+        </OrderedList>
     )
 }
 
