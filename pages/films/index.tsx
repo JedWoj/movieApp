@@ -18,7 +18,7 @@ const FilmsPage = ({genres}: FilmsPageType) => {
     
     useEffect(() => {
         (async () => {
-            const movies = await getFormattedPromise(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.NEXT_PUBLIC_MOVIE_API}&with_genres=${activeGenre}`);
+            const movies = await getFormattedPromise(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.NEXT_PUBLIC_MOVIE_API}&with_genres=${activeGenre}&page=2`);
             setActiveMovies(movies);
         })();
     },[activeGenre])
