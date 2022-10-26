@@ -12,7 +12,7 @@ interface FilmsListItemType {
 const FilmsListItem = ({film}: FilmsListItemType) => {
     return(
         <Link href={`films/${film.id}`}>
-            <ListItem>
+            <ListItem cursor={'pointer'}>
                 <Card>
                     <Flex>
                         <Box flexBasis={'100'}>
