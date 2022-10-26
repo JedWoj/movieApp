@@ -13,7 +13,7 @@ const FilmsList = ({films}: FilmsListType) => {
     }
     
     return(
-        <OrderedList paddingY={'10'}>
+        <OrderedList paddingTop={'10'}>
             {renderFilmsList()}
         </OrderedList>
     )

@@ -4,10 +4,14 @@ const filmsSlice = createSlice({
     name: "films",
     initialState: {
         activeGenre: 28,
+        activePage: 1,
     },
     reducers: {
         setActiveGenre(state, action: PayloadAction<number>) {
             state.activeGenre = action.payload;
+        },
+        loadMore(state, action: PayloadAction<number>) {
+            state.activePage = action.payload;
         }
     }
 });

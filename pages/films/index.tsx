@@ -7,6 +7,7 @@ import { useAppSelector } from '../../reduxHooks';
 import { getFormattedPromise } from '../../lib/getFormattedPromise';
 import FilmsList from '../../components/FilmsList/FilmsList';
 import { GenreMovies } from '../../types/genreMovies';
+import Pagination from '../../components/Pagination/Pagination';
 
 interface FilmsPageType {
     genres: GenresType;
@@ -14,14 +15,15 @@ interface FilmsPageType {
 
 const FilmsPage = ({genres}: FilmsPageType) => {
     const activeGenre = useAppSelector((state) => state.films.activeGenre);
+    const activePage = useAppSelector((state) => state.films.activePage);
     const [activeMovies, setActiveMovies] = useState<undefined | GenreMovies>();
     
     useEffect(() => {
         (async () => {
-            const movies = await getFormattedPromise(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.NEXT_PUBLIC_MOVIE_API}&with_genres=${activeGenre}&page=2`);
+            const movies = await getFormattedPromise(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.NEXT_PUBLIC_MOVIE_API}&with_genres=${activeGenre}&page=${activePage}`);
             setActiveMovies(movies);
         })();
-    },[activeGenre])
+    },[activeGenre, activePage])
     
     console.log(activeMovies)
     return(
@@ -29,6 +31,7 @@ const FilmsPage = ({genres}: FilmsPageType) => {
             <SelectCategory genres={genres} />
             <Container maxWidth={'5xl'}>
                 <FilmsList films={activeMovies} />
+                <Pagination />
             </Container>
         </>
     )
