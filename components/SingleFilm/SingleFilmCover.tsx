@@ -2,7 +2,6 @@ import react from 'react';
 import { Box, Heading, Center, Text, Flex } from "@chakra-ui/react";
 import { StarIcon } from '@chakra-ui/icons';
 import { SingleMovieType } from '../../types/singleMovieType';
-import { url } from 'inspector';
 
 interface SingleFilmCoverProps {
     movieInfo : SingleMovieType;
