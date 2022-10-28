@@ -25,13 +25,12 @@ const FilmsPage = ({genres}: FilmsPageType) => {
         })();
     },[activeGenre, activePage])
     
-    console.log(activeMovies)
     return(
         <>
             <SelectCategory genres={genres} />
             <Container maxWidth={'5xl'}>
                 <FilmsList films={activeMovies} />
-                <Pagination />
+                <Pagination films={activeMovies} />
             </Container>
         </>
     )

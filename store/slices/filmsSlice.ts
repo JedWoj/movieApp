@@ -10,9 +10,9 @@ const filmsSlice = createSlice({
         setActiveGenre(state, action: PayloadAction<number>) {
             state.activeGenre = action.payload;
         },
-        loadMore(state, action: PayloadAction<number>) {
+        changePage(state, action: PayloadAction<number>) {
             state.activePage = action.payload;
-        }
+        },
     }
 });
 

@@ -12,9 +12,14 @@ const SelectCategoryItem = ({category, genreId}: SelectCategoryItemType) => {
     const dispatch = useAppDispatch();
     const activeGenre = useAppSelector((state) => state.films.activeGenre);
 
+    const handleSelect = () => {
+        dispatch(filmsSlice.actions.setActiveGenre(genreId));
+        dispatch(filmsSlice.actions.changePage(1));
+    }
+
     return(
         <Center 
-            onClick={() => dispatch(filmsSlice.actions.setActiveGenre(genreId))}
+            onClick={handleSelect}
             _hover={{
                 backgroundColor: 'purple.600',
             }} 
