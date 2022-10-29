@@ -10,8 +10,7 @@ interface PaginationProps {
 const Pagination = ({films}: PaginationProps) => {
     const dispatch = useAppDispatch();
     const activePage = useAppSelector((state) => state.films.activePage);
-    console.log(films)
-
+    
     return(
         <>
             <Flex justifyContent={'space-between'} marginBottom={'5'} fontWeight={'bold'}>
