@@ -7,7 +7,7 @@ interface BackgroundColorType {
 
 const GlobalStyles = ({children}: BackgroundColorType) => {
     return(
-        <Box minHeight={'container.sm'} color={'whiteAlpha.900'} bgGradient="radial(#ff335d, #3f5efb)">
+        <Box minHeight={'100vh'} color={'whiteAlpha.900'} bgGradient="radial(#ff335d, #3f5efb)">
             {children}
         </Box>
     )
