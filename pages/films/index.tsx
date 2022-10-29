@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Container } from '@chakra-ui/react';
+import { Center, Container, Spinner } from '@chakra-ui/react';
 import SelectCategory from '../../components/SelectCategory/SelectCategory';
 import { GetStaticProps } from 'next';
 import { GenresType } from '../../types/genresType';
@@ -25,9 +25,9 @@ const FilmsPage = ({genres}: FilmsPageType) => {
     },[activeGenre, activePage,dispatch])
     
     console.log(activeMovies,requestStatus)
-    if(requestStatus === '') return <div>initializing</div>
+    if(requestStatus === '' || requestStatus === 'pending') return <Spinner position={'fixed'} top={'49vh'} left={'49vw'} />;
 
-    if(requestStatus === 'pending') return <div>Loading</div>
+    if(requestStatus === 'rejected') return <Center fontWeight={'bold'} marginTop={'20'}>Something Went Wrong!</Center>
 
     return(
         <>
