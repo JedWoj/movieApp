@@ -22,7 +22,7 @@ const FilmsPage = ({genres}: FilmsPageType) => {
 
     useEffect(() => {
         dispatch(fetchFilms(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.NEXT_PUBLIC_MOVIE_API}&with_genres=${activeGenre}&page=${activePage}`))
-    },[activeGenre, activePage,dispatch])
+    },[activeGenre, activePage, dispatch])
     
     console.log(activeMovies,requestStatus)
     if(requestStatus === '' || requestStatus === 'pending') return <Spinner position={'fixed'} top={'49vh'} left={'49vw'} />;

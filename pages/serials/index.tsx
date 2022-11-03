@@ -1,6 +1,7 @@
 import React from 'react';
 import { GetStaticProps } from 'next';
 import { useAppDispatch, useAppSelector } from '../../reduxHooks';
+import PopularSerials from '../../components/PopularSerials/PopularSerials';
 
 interface SerialsPageType {
     popularSerials: any;
@@ -12,9 +13,7 @@ const SerialsPage = ({popularSerials}: SerialsPageType) => {
 
     return(
         <>
-            <div>
-                serials
-            </div>
+            <PopularSerials serials={popularSerials} />
         </>
     )
 }
