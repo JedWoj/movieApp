@@ -6,7 +6,7 @@ interface CardType {
 
 const Card = ({children}: CardType) => {
     return(
-        <Box bgGradient={'linear(to-tr, #ff335d, #3f5efb)'} padding={'5'} borderRadius={'2xl'} boxShadow={'dark-lg'} marginY={'10'}>
+        <Box bgGradient={'linear(to-tr, #ff335d, #3f5efb)'} padding={'5'} borderRadius={'2xl'} boxShadow={'dark-lg'} marginY={'8'}>
             {children}
         </Box>
     )
