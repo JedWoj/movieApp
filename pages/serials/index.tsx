@@ -8,7 +8,6 @@ interface SerialsPageType {
 }
 
 const SerialsPage = ({popularSerials}: SerialsPageType) => {
-    console.log(popularSerials)
     const dispatch = useAppDispatch();
 
     return(
